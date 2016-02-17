@@ -1,2 +1,3 @@
 # personal-website
-my site
+
+Simple repo for my personal site. :)
