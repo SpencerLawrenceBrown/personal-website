@@ -1,0 +1,10 @@
+/*=======================
+Spencer.FYI header styling
+=========================*/
+
+#header_wrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
