@@ -1,0 +1,11 @@
+
+<h4 class="experiment_name">Organizing My Thoughts</h4>
+<p class="experiment_explanation">I write notes about the things that I read and watch. <br> Over time I will build experimental views to organize and explore these notes. Ideally, these views will help me make connections between ideas and share my thought process with others.</p>
+<div id="evernote_notes">
+<% for(var i=0; i<notes.length; i++){ %>
+	<div class="note_content">
+		<h3 class="note_title"> <%= notes[i].title %> </h3>
+		<%- notes[i].content %>
+	</div>
+<% } %>
+</div>

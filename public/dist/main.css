@@ -1,10 +1,268 @@
+/**
+* Site Styles
+* 
+* 
+*/
+
+/* Based on - http://clients.radicalmedia.com
+	With tweaks by Spencer
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+div {
+  position: relative;
+  display: block;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* splitting these up is faster */
+
+*:not(input) {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: .5em;
+}
+
+button,
+input[type=text],
+input[type=submit] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input {
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+/*================
+Default Styles
+==================*/
+
+body {
+  font-family: Helvetica Neue;
+  padding: 10px;
+}
+
 /*=======================
-Spencer.FYI header styling
+header styling
 =========================*/
 
 #header_wrapper {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 278px;
   display: block;
+  margin-bottom: 30px;
+}
+
+#header_wrapper #header_name {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: -0.8;
+}
+
+#header_wrapper #header_name #name_middle {
+  color: white;
+}
+
+#header_wrapper #header_subtitle {
+  text-align: right;
+}
+
+/*=====================
+Experiment Section -General- Less
+======================*/
+
+#experiment_header {
+  font-size: 2.0em;
+  color: lightgray;
+  margin-bottom: 9px;
+  opacity: 0.6;
+}
+
+.experiment_name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.experiment_explanation {
+  width: 700px;
+  max-width: 100%;
+  font-size: 1.0em;
+  font-style: italic;
+}
+
+/*====================
+Evernote Base Note
+=====================*/
+
+#evernote_notes {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+#evernote_notes .note_content {
+  border: 1px solid;
+  padding: 5px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  width: 350px;
 }

@@ -12,14 +12,14 @@ var cssnano		= require('gulp-cssnano');
 
 //Lint Task
 gulp.task('lint', function(){
-	return gulp.src('.public/js/*.js')
+	return gulp.src('./public/js/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 });
 
 //Compile Less & Concat CSS * Minify
 gulp.task('buildCSS', function(){
-	return gulp.src('./public/styles/less/**/*.less')
+	return gulp.src('./public/styles/less/styles.less')
 		.pipe(less())
 		.pipe(concatcss('main.css'))
 		.pipe(gulp.dest('./public/dist'))
@@ -29,20 +29,30 @@ gulp.task('buildCSS', function(){
 });
 
 //Concat and Minify JSS
-gulp.task("buildJS", function(){
-	return gulp.src(".public/js/*.js")
-		.pipe(concat('build.js'))
+gulp.task("buildJSDev", function(){
+	return gulp.src("./public/js/*.js")
+		.pipe(concat('main.build.js'))
 		.pipe(gulp.dest('./public/dist'))
-		.pipe(rename('build.min.js'))
+		.pipe(rename('main.build.min.js'))
+		.pipe(gulp.dest("./public/dist"));
+});
+
+//Concat and Uglify JSS
+gulp.task("buildJSProd", function(){
+	return gulp.src("./public/js/*.js")
+		.pipe(concat('main.build.js'))
+		.pipe(gulp.dest('./public/dist'))
+		.pipe(rename('main.build.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest("./public/dist"));
 });
 
 //Watch
 gulp.task("watch", function(){
-	gulp.watch('./public/js/*.js', ['lint', 'buildJS']);
-	gulp.watch('./public/styles/less/*.less', ['buildCSS']);
+	gulp.watch('./public/js/*.js', ['buildJSDev']);
+	gulp.watch('./public/styles/less/**/*.less', ['buildCSS']);
 });
 
 //Default Task
-gulp.task('default', ['lint', 'buildCSS', 'buildJS', 'watch']);
+gulp.task('default', ['lint', 'buildCSS', 'buildJSDev', 'watch']);
+gulp.task('buildProduction', ['lint', 'buildCSS', 'buildJSProd', 'watch']);
