@@ -12,7 +12,7 @@ var index			= require('./public/routes/index'); //routes
 var app = express();
 
 //Configuration
-var port = process.env.port || 3000;
+var port = process.env.port || 8080;
 
 
 //Module connection
