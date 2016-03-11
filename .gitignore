@@ -36,4 +36,4 @@ node_modules
 .DS_Store
 
 #Config
-/app/config/apiAccess.js
+/app/config/

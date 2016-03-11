@@ -8,11 +8,12 @@ var morgan       	= require('morgan');
 var Evernote 		= require('evernote').Evernote; //Evernote SDK
 var session			= require('express-session'); //Session for storing evernote token
 var index			= require('./public/routes/index'); //routes
+var config 			= require('./app/config/serverConfig');
 
 var app = express();
 
 //Configuration
-var port = process.env.port || 8080;
+var port = process.env.port || config.port;
 
 
 //Module connection
