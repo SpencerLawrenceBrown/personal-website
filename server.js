@@ -14,6 +14,7 @@ var app = express();
 
 //Configuration
 var port = process.env.port || config.port;
+var ip = config.ip;
 
 
 //Module connection
@@ -44,7 +45,7 @@ app.set('views', __dirname + '/public/views');
 app.use("/", index);
 
 //Start Server
-app.listen(port);
+app.listen(port, ip);
 console.log("Local server running at " + port);
 
 exports = module.exports = app;
