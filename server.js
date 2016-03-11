@@ -46,6 +46,6 @@ app.use("/", index);
 
 //Start Server
 app.listen(port, ip);
-console.log("Server running at " ip ":"+ port);
+console.log("Server running at " + ip + ":" + port);
 
 exports = module.exports = app;
