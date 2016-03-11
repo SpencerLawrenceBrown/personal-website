@@ -98,6 +98,7 @@ function getEvernoteNotes(req, res){
 		}
 		var notesJSON = JSON.stringify(notesObject);
 		redisClient.set('evernoteNotes', notesJSON);
+		redisClient.expire('evernoteNotes', 43200);
 		res.render('partials/evernote', {
 			notes: notesObject
 		});
